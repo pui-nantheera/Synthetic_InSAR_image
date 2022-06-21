@@ -74,7 +74,7 @@ if (Source_Type == 1 || Source_Type ==2 || Source_Type ==3)
     xgrid = reshape(U(1,:),numel(y),numel(x));
     ygrid = reshape(U(2,:),numel(y),numel(x));
     zgrid = reshape(U(3,:),numel(y),numel(x));
-    los_grid = xgrid*LOS_vector(1) + ygrid*LOS_vector(1) + zgrid*LOS_vector(3);
+    los_grid = xgrid*LOS_vector(1) + ygrid*LOS_vector(2) + zgrid*LOS_vector(3);
 elseif (Source_Type == 4)
     xgrid=rngchn_mogi(1/1000,1/1000,Mogi.Depth,-Mogi.Volume/1e9,coords(2,:)'/1000,coords(1,:)'/1000,v,repmat([1 0 0],length(coords),1));
     ygrid=rngchn_mogi(1/1000,1/1000,Mogi.Depth,-Mogi.Volume/1e9,coords(2,:)'/1000,coords(1,:)'/1000,v,repmat([0 1 0],length(coords),1));
@@ -84,7 +84,7 @@ elseif (Source_Type == 4)
 elseif (Source_Type == 5)
     model = [1,1,Penny.Depth*1000,Penny.Radius*1000,Penny.Pressure];
     [xgrid,ygrid,zgrid]=penny(model,coords',mu,v);
-    los_grid = xgrid*LOS_vector(1) + ygrid*LOS_vector(1) + zgrid*LOS_vector(3);
+    los_grid = xgrid*LOS_vector(1) + ygrid*LOS_vector(2) + zgrid*LOS_vector(3);
     los_grid=reshape(los_grid,numel(y),numel(x));
     
 end
