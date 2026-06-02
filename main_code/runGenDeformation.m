@@ -64,7 +64,7 @@ y=-25000:100:25000-100;
 % -------------------------------------------------------------------------
 if Source_Type == 5
     count = 1;
-    for Incidence = [2 15 25 160 170 177]
+    for Incidence = 30:3:45
         incidenceName = ['incidence',sprintf('%03d',Incidence)];
         for Heading =  0:72:180
             headingName = [incidenceName, '_heading',sprintf('%03d',Heading)];
@@ -109,7 +109,7 @@ end
 % -------------------------------------------------------------------------
 if Source_Type == 4
     count = 1;
-    for Incidence = 33%[3 8 12 29 45 140 170 210 330 350]
+    for Incidence = 30:3:45
         incidenceName = ['incidence',sprintf('%03d',Incidence)];
         for Heading =  5:40:330
             headingName = [incidenceName, '_heading',sprintf('%03d',Heading)];
@@ -158,7 +158,7 @@ end
 % -------------------------------------------------------------------------
 if Source_Type == 3
     count = 1;
-    for Incidence = 10:72:360-36
+    for Incidence = 30:3:45
         incidenceName = ['incidence',sprintf('%02d',Incidence)];
         for Heading =  0:72:180
             headingName = [incidenceName, '_heading',sprintf('%03d',Heading)];
@@ -222,7 +222,7 @@ end
 if Source_Type == 2
     
     count = 1;
-    for Incidence = [43 50]
+    for Incidence = 30:3:45
         incidenceName = ['incidence',sprintf('%02d',Incidence)];
         for Heading = [0 192]
             headingName = [incidenceName, '_heading',sprintf('%03d',Heading)];
@@ -282,7 +282,7 @@ end
 if Source_Type == 1
     Quake.Slip = 1; %magnitude of slip vector in metres
     Heading = 192.04;    % Heading (azimuth) of satellite measured clockwise from North, in degrees
-    Incidence = 23;
+    Incidence = 33;
     count = 1;
     for Strike = 0:36:360-36
         Quake.Strike = Strike;              %strike in degrees
